@@ -1,2 +1,7 @@
 pandas
 customtkinter
+flake8
+black
+isort
+yamllint
+pip-tools
