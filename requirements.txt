@@ -54,7 +54,9 @@ python-dateutil==2.9.0.post0
 pytz==2024.2
     # via pandas
 pyyaml==6.0.2
-    # via yamllint
+    # via
+    #   -r requirements.in
+    #   yamllint
 six==1.17.0
     # via python-dateutil
 tzdata==2024.2

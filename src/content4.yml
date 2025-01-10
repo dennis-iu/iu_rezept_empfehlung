@@ -1,0 +1,232 @@
+number: 3
+offset: 0
+results:
+- id: 661251
+  image: https://img.spoonacular.com/recipes/661251-312x231.jpg
+  imageType: jpg
+  likes: 0
+  missedIngredientCount: 5
+  missedIngredients:
+  - aisle: Produce
+    amount: 1.0
+    id: 11457
+    image: https://img.spoonacular.com/ingredients_100x100/spinach.jpg
+    meta:
+    - chopped
+    - ()
+    name: baby spinach
+    original: 1 cups baby spinach (chopped)
+    originalName: baby spinach (chopped)
+    unit: cups
+    unitLong: cup
+    unitShort: cup
+  - aisle: Gluten Free
+    amount: 1.0
+    id: 93740
+    image: https://img.spoonacular.com/ingredients_100x100/almond-meal-or-almond-flour.jpg
+    meta: []
+    name: almond flour
+    original: 1 cups Almond flour*
+    originalName: Almond flour
+    unit: cups
+    unitLong: cup
+    unitShort: cup
+  - aisle: Pasta and Rice
+    amount: 1.0
+    extendedName: cooked amaranth
+    id: 20002
+    image: https://img.spoonacular.com/ingredients_100x100/amaranth.jpg
+    meta:
+    - cooked
+    - ()
+    name: amaranth
+    original: 1 cups Amaranth (cooked)*
+    originalName: Amaranth (cooked)
+    unit: cups
+    unitLong: cup
+    unitShort: cup
+  - aisle: Baking
+    amount: 1.0
+    id: 18369
+    image: https://img.spoonacular.com/ingredients_100x100/white-powder.jpg
+    meta: []
+    name: baking powder
+    original: 1 tsp baking powder
+    originalName: baking powder
+    unit: tsp
+    unitLong: teaspoon
+    unitShort: tsp
+  - aisle: Milk, Eggs, Other Dairy
+    amount: 4.0
+    id: 1123
+    image: https://img.spoonacular.com/ingredients_100x100/egg.png
+    meta: []
+    name: eggs
+    original: 4 eggs
+    originalName: eggs
+    unit: ''
+    unitLong: ''
+    unitShort: ''
+  title: Spinach Almond Amaranth Breakfast Muffins
+  unusedIngredients: []
+  usedIngredientCount: 0
+  usedIngredients: []
+- id: 647268
+  image: https://img.spoonacular.com/recipes/647268-312x231.jpg
+  imageType: jpg
+  likes: 0
+  missedIngredientCount: 6
+  missedIngredients:
+  - aisle: Baking
+    amount: 3.0
+    id: 18369
+    image: https://img.spoonacular.com/ingredients_100x100/white-powder.jpg
+    meta: []
+    name: baking powder
+    original: 3 tsp baking powder
+    originalName: baking powder
+    unit: tsp
+    unitLong: teaspoons
+    unitShort: tsp
+  - aisle: Milk, Eggs, Other Dairy
+    amount: 0.25
+    id: 1001
+    image: https://img.spoonacular.com/ingredients_100x100/butter-sliced.jpg
+    meta:
+    - melted
+    name: butter
+    original: 1/4 cup butter, melted
+    originalName: butter, melted
+    unit: cup
+    unitLong: cups
+    unitShort: cup
+  - aisle: Milk, Eggs, Other Dairy
+    amount: 1.0
+    id: 1123
+    image: https://img.spoonacular.com/ingredients_100x100/egg.png
+    meta: []
+    name: egg
+    original: 1 egg
+    originalName: egg
+    unit: ''
+    unitLong: ''
+    unitShort: ''
+  - aisle: Nut butters, Jams, and Honey
+    amount: 0.25
+    id: 19296
+    image: https://img.spoonacular.com/ingredients_100x100/honey.png
+    meta: []
+    name: honey
+    original: 1/4 cup honey
+    originalName: honey
+    unit: cup
+    unitLong: cups
+    unitShort: cup
+  - aisle: Milk, Eggs, Other Dairy
+    amount: 1.0
+    id: 1077
+    image: https://img.spoonacular.com/ingredients_100x100/milk.png
+    meta: []
+    name: milk
+    original: 1 cup milk
+    originalName: milk
+    unit: cup
+    unitLong: cup
+    unitShort: cup
+  - aisle: Produce
+    amount: 12.0
+    id: 12147
+    image: https://img.spoonacular.com/ingredients_100x100/pine-nuts.png
+    meta: []
+    name: pine nuts to sprinkle
+    original: pine nuts to sprinkle
+    originalName: pine nuts to sprinkle
+    unit: servings
+    unitLong: servings
+    unitShort: servings
+  title: Honey Pine Nuts Muffins
+  unusedIngredients: []
+  usedIngredientCount: 0
+  usedIngredients: []
+- id: 656125
+  image: https://img.spoonacular.com/recipes/656125-312x231.jpg
+  imageType: jpg
+  likes: 0
+  missedIngredientCount: 6
+  missedIngredients:
+  - aisle: Baking
+    amount: 1.0
+    id: 18369
+    image: https://img.spoonacular.com/ingredients_100x100/white-powder.jpg
+    meta: []
+    name: baking powder
+    original: 1 tablespoon Baking powder
+    originalName: Baking powder
+    unit: tablespoon
+    unitLong: tablespoon
+    unitShort: Tbsp
+  - aisle: Baking
+    amount: 1.0
+    extendedName: unsweetened desiccated coconut flakes
+    id: 12108
+    image: https://img.spoonacular.com/ingredients_100x100/shredded-coconut.jpg
+    meta:
+    - unsweetened
+    name: desiccated coconut flakes
+    original: 1 tablespoon Unsweetened desiccated coconut flakes
+    originalName: Unsweetened desiccated coconut flakes
+    unit: tablespoon
+    unitLong: tablespoon
+    unitShort: Tbsp
+  - aisle: Milk, Eggs, Other Dairy
+    amount: 90.0
+    id: 1123
+    image: https://img.spoonacular.com/ingredients_100x100/egg.png
+    meta: []
+    name: egg
+    original: 90 grams Egg
+    originalName: Egg
+    unit: grams
+    unitLong: grams
+    unitShort: g
+  - aisle: Milk, Eggs, Other Dairy
+    amount: 120.0
+    id: 1077
+    image: https://img.spoonacular.com/ingredients_100x100/milk.png
+    meta: []
+    name: milk
+    original: 120 ml Milk
+    originalName: Milk
+    unit: ml
+    unitLong: milliliters
+    unitShort: ml
+  - aisle: Produce
+    amount: 500.0
+    extendedName: canned diced pineapples
+    id: 9266
+    image: https://img.spoonacular.com/ingredients_100x100/pineapple.jpg
+    meta:
+    - diced
+    - canned
+    name: pineapples
+    original: 500 grams Canned pineapples, diced
+    originalName: Canned pineapples, diced
+    unit: grams
+    unitLong: grams
+    unitShort: g
+  - aisle: Baking
+    amount: 1.0
+    id: 2050
+    image: https://img.spoonacular.com/ingredients_100x100/vanilla-extract.jpg
+    meta: []
+    name: vanilla extract
+    original: 1 teaspoon Vanilla extract
+    originalName: Vanilla extract
+    unit: teaspoon
+    unitLong: teaspoon
+    unitShort: tsp
+  title: Pineapple Coconut Muffins
+  unusedIngredients: []
+  usedIngredientCount: 0
+  usedIngredients: []
+totalResults: 54

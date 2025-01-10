@@ -5,3 +5,4 @@ black
 isort
 yamllint
 pip-tools
+pyyaml
