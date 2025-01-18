@@ -1,5 +1,5 @@
 """
-Class for Spoonacular API request.
+Klasse für Spoonacular API request.
 
 Author:     Dennis Scholz
 Created:    08.01.2025
@@ -7,39 +7,31 @@ Version:    1.0
 """
 
 import logging as log
-import re
-import yaml
-import requests
 
-class RecipeApi():
-    """Class for Spoonacular API source."""
+import requests
+from deep_translator import GoogleTranslator
+
+
+class RecipeApi:
+    """Klasse für die Spoonacular API Quelle."""
 
     def __init__(self, config: dict):
         """
-        Initialize the class.
+        Klasse initialisieren.
 
-        :param config: dict - Configuration dictionary
+        :param config: dict - Konfigurationsdaten
         :return: None
         """
         for key, value in config.items():
             setattr(self, key, value)
-            print(key,value)
-        
-        # create headers for request
-        self.headers = {"content_type": self.content_type,
-                        "x-api-key": f"{self.api_key}"}
-        
-        # create list for relevant dashboard output
-        self.dashboard_content = []
 
     def __enter__(self):
-        """Enter the class."""
-        self._request()
+        """Klasse öffnen."""
         return self
-    
+
     def __exit__(self, exc_type, exc_val, exc_tb):
         """
-        Exit the class.
+        Klasse verlassen.
 
         :param exc_type: Exception Type
         :param exc_val: Exception Value
@@ -53,42 +45,57 @@ class RecipeApi():
             )
             raise exc_val
 
-    def _request(self):
-        """Send a request to the api."""
-        payload = {
-            'query': 'muffin',
-            'diet': 'Vegetarian',
-            'intolerances': 'Peanut',
-            'number': 3,
-            'instructionsRequired': True,
-            'fillIngredients': True,
-            'addRecipeInformation': True
-        }
+    def send_request(self):
+        """
+        Request an die Api senden.
+
+        :return: list: Ergebnis
+        """
         try:
-            response = requests.get(self.url, params=payload, headers=self.headers)
+            response = requests.get(self.url, params=self.payload, headers=self.headers)
             response.raise_for_status()
+            self.data = {}
             self.data = response.json()
+            self.get_nutritional_information()
+            self.prepare_data()
+            return self.recipe
         except requests.exceptions.RequestException as e:
-            log.error(f"Request to {self.url} failed: {e}")
+            log.error(f"Request zur {self.url} fehlgeschlagen. Exception: {e}")
             raise
 
+    def get_nutritional_information(self):
+        """Funktion um zusätzliche Information zu den Kalorien zu bekommen."""
+        url_part_1 = "https://api.spoonacular.com/recipes/"
+        nutrition_url = (
+            url_part_1 + f"{self.data["results"][0]["id"]}/nutritionWidget.json"
+        )
+        response = requests.get(nutrition_url, headers=self.headers)
+        response.raise_for_status()
+        self.data.update(response.json())
+
     def prepare_data(self):
-        """Prepare data for output."""
-        for value in self.data["results"]:
-            recipe = {
-                "recipe_url": value["spoonacularSourceUrl"],
-                "recipe_img": value["image"],
-                "ingredients": []
-            }
+        """Daten für die Ergebnisanzeige vorbereiten."""
+        # Namen übersetzen
+        recipe_name = GoogleTranslator(source="auto", target="de").translate(
+            self.data["results"][0]["title"]
+        )
 
-            for ingredient in value.get("extendedIngredients", []):
-                recipe["ingredients"].append({
-                "name": ingredient.get("nameClean"),
-                "amount": ingredient["measures"]["metric"].get("amount"),
-                "unit_short": ingredient["measures"]["metric"].get("unitShort"),
-                "unit_long": ingredient["measures"]["metric"].get("unitLong"),
-                })
+        # Ablegen der Standardangaben
+        self.recipe = {}
+        self.recipe = {
+            "recipe_name": recipe_name,
+            "recipe_img": self.data["results"][0]["image"],
+            "recipe_url": self.data["results"][0]["spoonacularSourceUrl"],
+            "recipe_ntr": {},
+        }
 
-            self.dashboard_content.append(recipe)
-
-        log.info(self.dashboard_content)
+        # Ablegen der Nährwerte
+        relevant_nutrients = ["Calories", "Fat", "Carbohydrates", "Protein"]
+        for item in self.data["nutrients"]:
+            if item["name"] in relevant_nutrients:
+                item_name_de = GoogleTranslator(source="auto", target="de").translate(
+                    item["name"]
+                )
+                self.recipe["recipe_ntr"].update(
+                    {f"{item_name_de}": f"{item["amount"]} {item["unit"]}"}
+                )

@@ -6,3 +6,11 @@ isort
 yamllint
 pip-tools
 pyyaml
+customtkinter
+requests
+selenium
+webdriver-manager
+deep-translator
+pillow
+autoflake
+yamlfmt
