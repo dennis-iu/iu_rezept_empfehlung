@@ -1,3 +1,22 @@
-url: "https://api.spoonacular.com/recipes/complexSearch"
+url: https://api.spoonacular.com/recipes/complexSearch
 timeout: 10
-content_type: "application/json"
+headers:
+  content_type: application/json
+payload:
+  number: 1
+  instructionsRequired: true
+  addRecipeInformation: true
+  offset: 0
+intolerances:
+  Milch: Dairy
+  Ei: Egg
+  Gluten: Gluten
+  Getreide: Grain
+  Erdnuss: Peanut
+  Meeresfrüchte: Seafood
+  Sesam: Sesame
+  Schalentiere: Shellfish
+  Soja: Soy
+  Sulfite: Sulfite
+  Baumnüsse: Tree Nut
+  Weizen: Wheat
