@@ -1,3 +1,7 @@
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import importlib
 import logging as log
 import webbrowser
@@ -92,8 +96,10 @@ class UiBase(ABC):
         :param link: str - Link zur Seite die geöffnet werden soll
         :return: None
         """
-        browser = webbrowser.get("chromium-browser")
-        browser.open(link)
+        try:
+            webbrowser.open(link)
+        except Exception as e:
+            self.show_error_dialog(f"Fehler beim Öffnen des Links: {e}.")
 
     def create_button(self, name, to_do, position, anchor="center"):
         """

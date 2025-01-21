@@ -1,1 +1,4 @@
 config/api_key.yml
+__pycache__/
+*.pyc
+.vscode/
