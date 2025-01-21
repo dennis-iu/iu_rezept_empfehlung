@@ -36,6 +36,9 @@ def main():
     # Tkinter root initialisieren
     root = tk.Tk()
 
+    # Fenster-Titel setzen
+    root.title("recipe")
+
     # Starte das erste Dashboard
     with StartUi(root, config):
         log.info("Dashboard gestartet!")

@@ -1,5 +1,4 @@
 url: https://api.spoonacular.com/recipes/complexSearch
-timeout: 10
 headers:
   content_type: application/json
 payload:
