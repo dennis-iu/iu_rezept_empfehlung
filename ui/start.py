@@ -30,7 +30,7 @@ class StartUi(UiBase):
 
     def choose_next_ui(self):
         """Methode um die nächste Ui zu starten."""
-        if self.config["headers"].get("x-api-key", None) is None:
+        if not self.config["headers"].get("x-api-key"):
             log.info("Keinen Api-Key gefunden, starte Key_Entry-Dashboard.")
             self.switch_to(KeyEntryUi)
         else:
